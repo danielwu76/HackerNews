@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  title = 'Hacker News Feed';
-  data: any[] = [];
+  title = 'Hacker News';
 
   constructor() { }
 
