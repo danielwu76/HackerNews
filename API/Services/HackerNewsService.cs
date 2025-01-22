@@ -14,8 +14,7 @@ namespace API.Services
             _httpClient.BaseAddress = new Uri(_apiUrl);
         }
 
-        // Get top stories
-        public async Task<int[]> GetTopStoriesAsync()
+        public async Task<int[]> GetTopItemsAsync()
         {
             var response = await _httpClient.GetAsync("topstories.json");
             response.EnsureSuccessStatusCode();
@@ -24,10 +23,9 @@ namespace API.Services
             return JsonSerializer.Deserialize<int[]>(content);
         }
 
-        // Get details of a specific story
-        public async Task<HackerNewsItem> GetStoryAsync(int storyId)
+        public async Task<HackerNewsItem> GetItemAsync(int itemId)
         {
-            var response = await _httpClient.GetAsync($"item/{storyId}.json");
+            var response = await _httpClient.GetAsync($"item/{itemId}.json");
             response.EnsureSuccessStatusCode();
 
             var content = await response.Content.ReadAsStringAsync();

@@ -1,4 +1,4 @@
-<h1>Hacker News Top Stories</h1>
+<h1>Hacker News</h1>
 
 <ul>
   <li *ngFor="let item of items">
@@ -6,3 +6,11 @@
     <span *ngIf="item.url == null">{{ item.title }} (by {{ item.by }})</span>
   </li>
 </ul>
+
+<div class="pagination">
+  <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+
+  <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+</div>

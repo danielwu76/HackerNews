@@ -19,14 +19,14 @@ namespace API.Controllers
         [HttpGet(Name = "GetTopItems")]
         public async Task<IActionResult> GetTopItems()
         {
-            var itemIds = await _hackerNewsService.GetTopStoriesAsync();
+            var itemIds = await _hackerNewsService.GetTopItemsAsync();
             return Ok(itemIds);
         }
 
         [HttpGet("item/{id}")]
         public async Task<IActionResult> GetItem(int id)
         {
-            var item = await _hackerNewsService.GetStoryAsync(id);
+            var item = await _hackerNewsService.GetItemAsync(id);
             return item != null ? Ok(item) : NotFound();
         }
     }

@@ -9,13 +9,11 @@ export class HackerNewsService {
   private apiBaseUrl = 'https://localhost:7036/api/HackerNews'; 
   constructor(private http: HttpClient) { }
 
-  // Fetch top stories
-  getTopStories(): Observable<number[]> {
+  getTopItems(): Observable<number[]> {
     return this.http.get<number[]>(`${this.apiBaseUrl}/`);
   }
 
-  // Fetch details of a specific story
-  getStory(itemId: number): Observable<any> {
+  getItem(itemId: number): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}/item/${itemId}`);
   }
 }
