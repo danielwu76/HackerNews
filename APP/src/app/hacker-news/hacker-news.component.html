@@ -1,0 +1,8 @@
+<h1>Hacker News Top Stories</h1>
+
+<ul>
+  <li *ngFor="let item of items">
+    <span *ngIf="item.url != null"><a [href]="item.url" target="_blank">{{ item.title }}</a> (by {{ item.by }})</span>
+    <span *ngIf="item.url == null">{{ item.title }} (by {{ item.by }})</span>
+  </li>
+</ul>
