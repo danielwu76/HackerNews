@@ -13,7 +13,6 @@ builder.Services.AddCors(o =>
 });
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddHttpClient<HackerNewsService>();
 

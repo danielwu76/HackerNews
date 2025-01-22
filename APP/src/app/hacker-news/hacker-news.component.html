@@ -1,9 +1,16 @@
 <h1>Hacker News</h1>
 
+<div class="search-bar">
+  <input type="text"
+         [(ngModel)]="searchTerm"
+         (input)="searchItems()"
+         placeholder="Search by title or author" />
+</div>
+
 <ul>
-  <li *ngFor="let item of items">
+  <li *ngFor="let item of currentPageItems">
     <span *ngIf="item.url != null"><a [href]="item.url" target="_blank">{{ item.title }}</a> (by {{ item.by }})</span>
-    <span *ngIf="item.url == null">{{ item.title }} (by {{ item.by }})</span>
+    <span *ngIf="item.url == null"><span class="nolink">{{ item.title }}</span> (by {{ item.by }})</span>
   </li>
 </ul>
 

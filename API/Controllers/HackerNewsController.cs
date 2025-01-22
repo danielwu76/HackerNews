@@ -11,9 +11,10 @@ namespace API.Controllers
         private readonly ILogger<HackerNewsController> _logger;
         private readonly HackerNewsService _hackerNewsService;
 
-        public HackerNewsController(HackerNewsService hackerNewsService)
+        public HackerNewsController(HackerNewsService hackerNewsService, ILogger<HackerNewsController> logger)
         {
             _hackerNewsService = hackerNewsService;
+            _logger = logger;
         }
 
         [HttpGet(Name = "GetTopItems")]
